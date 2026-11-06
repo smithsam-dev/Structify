@@ -50,6 +50,6 @@ Contributions, issues, and feature requests are welcome! Whether you are a stude
 Distributed under the MIT License. See `LICENSE` for more information.
 
 ## 👨‍💻 Author
-**Smith**  
+**Smith S Pazhampally**  
 *Computer Science & Engineering Student*  
 Building open-source tools with a focus on agentic systems, secure code, and algorithm optimization.
