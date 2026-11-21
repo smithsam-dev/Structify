@@ -1,55 +1,57 @@
 # Structify 🧱
-**Java Data Structures Toolkit (JDST)**
 
-Structify is a clean, strongly-typed, and heavily documented Java library containing optimized implementations of core data structures. Built with an educational focus, this toolkit is designed to help developers and computer science students understand algorithmic efficiency and integrate reliable, pre-tested structures into their own applications.
+**Java Data Structures Toolkit**
 
-## 🚀 Features
-* **Core Tree Structures:** Ground-up implementations of Binary Search Trees (BST), handling node insertion and ordered traversal.
-* **Educational First:** The codebase is heavily commented and purposefully structured to demonstrate the functional mechanics of data models without over-abstraction.
-* **Secure & Optimized:** Designed with strict typing and memory management in mind, establishing a foundation for AI-assisted vulnerability scanning and automated unit testing.
+Structify is an educational Java library with integer binary search tree implementations. Use the basic BST to explore ordered trees, or choose the self-balancing AVL tree when predictable lookup, insertion, and deletion time matters.
 
-## 📂 Project Structure
-```text
-Structify/
-├── src/
-│   ├── Node.java
-│   └── BinarySearchTree.java
-├── LICENSE
-└── README.md
+## Binary search tree
+
+`BinarySearchTree` ignores duplicate values and provides `insert`, `contains`, `delete`, `size`, `isEmpty`, `clear`, `height`, and sorted `inorderTraversal`. It can also be used in a for-each loop.
+
+Its operations take O(h), where h is tree height, and can take O(n) for sorted insertions. The height of an empty tree is 0.
+
+## AVL tree
+
+`AVLTree` offers the same collection API while rebalancing itself after insertions and deletions. Its lookup, insertion, and deletion take O(log n). Duplicate values are ignored, and traversal returns an immutable ascending snapshot.
+
+```java
+AVLTree tree = new AVLTree();
+tree.insert(8);
+tree.insert(3);
+tree.insert(10);
+
+System.out.println(tree.contains(3));        // true
+System.out.println(tree.inorderTraversal()); // [3, 8, 10]
+System.out.println(tree.height());           // 2
+
+tree.delete(8);
 ```
 
-## 💻 Getting Started
-To use Structify in your local environment, clone the repository and compile the Java source files.
+## Getting started
 
-**1. Clone the repository:**
+Requires Java 8 or newer and Maven. Compile the project and run the automated tests:
+
 ```bash
-git clone [https://github.com/YOUR-USERNAME/Structify.git](https://github.com/YOUR-USERNAME/Structify.git)
+git clone https://github.com/smithsam-dev/Structify.git
 cd Structify
+mvn test
 ```
 
-**2. Compile the source code:**
+To run the binary search tree demo:
+
 ```bash
 javac src/*.java
-```
-
-**3. Run the core implementations:**
-```bash
 java -cp src BinarySearchTree
 ```
 
-## 🤝 Contributing
-Contributions, issues, and feature requests are welcome! Whether you are a student submitting your first PR or an experienced developer adding complex graph algorithms, your input is valued. 
+## Contributing
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/NewStructure`)
-3. Commit your Changes (`git commit -m 'Add a Self-Balancing Tree'`)
-4. Push to the Branch (`git push origin feature/NewStructure`)
-5. Open a Pull Request
+Contributions, issues, and feature requests are welcome. Useful next steps include a generic comparator-based tree, more structures such as heaps and hash tables, and benchmarks comparing balanced and unbalanced trees.
 
-## 📝 License
-Distributed under the MIT License. See `LICENSE` for more information.
+1. Fork the project.
+2. Create a feature branch.
+3. Commit your changes and open a pull request.
 
-## 👨‍💻 Author
-**Smith S Pazhampally**  
-*Computer Science & Engineering Student*  
-Building open-source tools with a focus on agentic systems, secure code, and algorithm optimization.
+## License
+
+Distributed under the MIT License. See [LICENSE](LICENSE) for details.
